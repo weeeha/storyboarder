@@ -31,6 +31,7 @@ import notifications from './../../../window/notifications'
 import Icon from '../Icon'
 import MenuManager from '../MenuManager'
 import ElementsPanel from '../ElementsPanel'
+import PromptPanel from '../PromptPanel'
 import BoardInspector from '../BoardInspector'
 import GuidesInspector from '../GuidesInspector'
 import GuidesView from '../GuidesView'
@@ -264,6 +265,7 @@ const Editor = React.memo(({
                 </div>
               </div>
             </div>
+            <PromptPanel/>
           </div>
         </div>
         <KeyHandler/>

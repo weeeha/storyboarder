@@ -2,6 +2,12 @@ const remoteMain = require('@electron/remote/main')
 remoteMain.initialize()
 const {app, ipcMain, BrowserWindow, dialog, powerSaveBlocker} = electron = require('electron')
 
+// Dev builds of this fork keep their own settings folder, so running from
+// source never migrates or overwrites the installed Storyboarder's prefs.
+if (!app.isPackaged) {
+  app.setPath('userData', require('path').join(app.getPath('appData'), 'Storyboarder-Dev'))
+}
+
 const fs = require('fs-extra')
 const path = require('path')
 const isDev = require('electron-is-dev')
@@ -33,6 +39,7 @@ const MobileServer = require('./express-app/app')
 const preferencesUI = require('./windows/preferences')()
 const registration = require('./windows/registration/main')
 const shotGeneratorWindow = require('./windows/shot-generator/main')
+require('./services/claude-shot').init()
 const printProject = require('./windows/print-project/main')
 const printWorksheet = require('./windows/print-worksheet/main')
 
@@ -298,7 +305,7 @@ app.on('ready', async () => {
     mainWindow.webContents.send('importWorksheets', [e.fileData])
   })
   appServer.on('error', err => {
-    if (err.errno === 'EADDRINUSE') {
+    if (err.code === 'EADDRINUSE' || err.errno === 'EADDRINUSE') {
       // dialog.showMessageBox(null, {
       //   type: 'error',
       //   message: 'Could not start the mobile web app server. The port was already in use. Is Storyboarder already open?'

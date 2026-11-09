@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shot Prompt Draft</title>
+<link rel="stylesheet" href="../src/css/fonts.css">
+<style>
+  /* Values copied from src/css/shot-generator.css so the draft reads as the real app */
+  :root {
+    --bg: #333639;
+    --panel: #111;
+    --view: #111114;
+    --raised: #26292b;
+    --line: rgba(255,255,255,0.1);
+    --text: #eee;
+    --muted: #999;
+    --accent: #5c65c0;
+    --r-sm: 4px;
+    --r-md: 6px;
+    font-family: 'thicccboi', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-weight: 300; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .switch { display: flex; gap: 8px; align-items: center; padding: 12px 16px; font-size: 14px; border-bottom: 1px solid var(--line); }
+  .switch p { margin: 0 12px 0 0; color: var(--muted); }
+  .switch button { font: inherit; color: var(--text); background: none; border: 1px solid var(--line); border-radius: var(--r-md); padding: 6px 12px; cursor: pointer; }
+  .switch button[aria-pressed="true"] { border-color: var(--accent); color: #fff; }
+  .switch button:focus-visible, .panel button:focus-visible, .panel textarea:focus-visible, .overlay textarea:focus-visible, .overlay button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .app { display: flex; flex-direction: column; height: calc(100dvh - 53px); min-height: 560px; }
+  .toolbar { height: 50px; display: flex; align-items: center; gap: 4px; padding-left: 300px; background: var(--bg); font-size: 14px; color: #e0e0e0; }
+  .toolbar span { padding: 6px 12px; border-radius: var(--r-md); }
+  .toolbar .claude { margin-left: auto; margin-right: 12px; border: 1px solid var(--line); }
+  .main { flex: 1; display: flex; min-height: 0; }
+  .aside { width: 300px; background: var(--panel); display: flex; flex-direction: column; }
+  .topdown { height: 300px; border-bottom: 1px solid var(--line); position: relative; }
+  .elements { padding: 12px 16px; font-size: 13px; color: var(--muted); line-height: 1.8; }
+  .elements div { color: var(--text); }
+  .center { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .view { flex: 1; background: var(--view); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .frame { width: min(86%, 760px); aspect-ratio: 16 / 9; border: 1px solid var(--line); position: relative; }
+  .inspectors { height: 150px; background: var(--view); border-top: 1px solid var(--line); padding: 12px 16px; font-size: 13px; color: var(--muted); }
+
+  /* Variant A: right panel */
+  .panel { width: 320px; background: var(--panel); border-left: 1px solid var(--line); display: flex; flex-direction: column; }
+  .panel h2 { font-size: 16px; font-weight: 400; margin: 20px 16px 12px; }
+  .history { flex: 1; overflow: auto; padding: 0 16px; }
+  .turn { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.45; }
+  .turn .you { color: var(--text); margin: 0 0 6px; }
+  .turn .did { color: var(--muted); margin: 0; font-size: 13px; }
+  .turn .did ul { margin: 6px 0 0; padding-left: 18px; }
+  .turn.working .did { color: var(--text); }
+  .compose { padding: 12px 16px 16px; border-top: 1px solid var(--line); }
+  textarea { width: 100%; resize: none; font: inherit; font-size: 14px; line-height: 1.45; color: var(--text); background: var(--raised); border: 1px solid var(--line); border-radius: var(--r-md); padding: 10px 12px; }
+  .row { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 13px; color: var(--muted); }
+  .row label { display: flex; align-items: center; gap: 6px; }
+  .primary { margin-left: auto; font: inherit; font-size: 14px; color: #fff; background: var(--accent); border: 0; border-radius: var(--r-md); padding: 8px 14px; cursor: pointer; }
+  .plain { font: inherit; font-size: 13px; color: var(--text); background: none; border: 1px solid var(--line); border-radius: var(--r-md); padding: 6px 10px; cursor: pointer; }
+
+  /* Variant B: overlay over the camera view */
+  .overlay { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); width: min(620px, calc(100% - 32px)); background: var(--raised); border: 1px solid var(--line); border-radius: var(--r-md); box-shadow: 0 8px 24px rgba(0,0,0,0.5); padding: 12px; }
+  .overlay .last { font-size: 13px; color: var(--muted); margin: 0 0 8px; line-height: 1.45; }
+  .overlay textarea { background: var(--view); }
+  .hint { font-size: 12px; color: var(--muted); }
+
+  [hidden] { display: none !important; }
+  .notes { max-width: 70ch; padding: 20px 16px 40px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+  .notes h2 { color: var(--text); font-size: 16px; font-weight: 400; margin: 0 0 8px; }
+</style>
+</head>
+<body>
+  <div class="switch" role="group" aria-label="Draft variant">
+    <p>Draft. Nothing here is wired up.</p>
+    <button type="button" data-v="a" aria-pressed="true">A: Right panel</button>
+    <button type="button" data-v="b" aria-pressed="false">B: Overlay</button>
+  </div>
+
+  <div class="app">
+    <div class="toolbar">
+      <span>Add Camera</span><span>Object</span><span>Character</span><span>Light</span><span>Image</span>
+      <span class="claude" id="claudeToggle">Prompt</span>
+      <span>Insert As New Board</span><span>Save to Board</span>
+    </div>
+    <div class="main">
+      <div class="aside">
+        <div class="topdown">
+          <svg viewBox="0 0 300 300" width="100%" height="100%" aria-label="Top-down map">
+            <g stroke="rgba(255,255,255,0.08)">
+              <path d="M0 50H300M0 100H300M0 150H300M0 200H300M0 250H300M50 0V300M100 0V300M150 0V300M200 0V300M250 0V300"/>
+            </g>
+            <rect x="120" y="110" width="60" height="36" fill="none" stroke="#999"/>
+            <circle cx="112" cy="128" r="8" fill="#eee"/>
+            <circle cx="190" cy="128" r="8" fill="#eee"/>
+            <path d="M150 250 L134 214 L166 214 Z" fill="#5c65c0"/>
+          </svg>
+        </div>
+        <div class="elements">
+          <div>Camera 1</div><div>Maya</div><div>Theo</div><div>Table</div><div>Light</div>
+        </div>
+      </div>
+
+      <div class="center">
+        <div class="view">
+          <div class="frame">
+            <svg viewBox="0 0 160 90" width="100%" height="100%" aria-label="Camera view">
+              <rect x="50" y="56" width="60" height="6" fill="#444"/>
+              <rect x="56" y="62" width="3" height="20" fill="#444"/><rect x="101" y="62" width="3" height="20" fill="#444"/>
+              <circle cx="40" cy="32" r="6" fill="#666"/><rect x="33" y="39" width="14" height="30" rx="3" fill="#666"/>
+              <circle cx="122" cy="34" r="6" fill="#666"/><rect x="115" y="41" width="14" height="28" rx="3" fill="#666"/>
+            </svg>
+          </div>
+          <div class="overlay" id="overlay" hidden>
+            <p class="last">Last: low-angle two-shot built. Maya and Theo at the table, camera at 0.6 m looking up.</p>
+            <label class="hint" for="ov">Describe the shot</label>
+            <textarea id="ov" rows="2">Same shot, but push in to a close-up on Maya</textarea>
+            <div class="row">
+              <span class="hint">Return builds. Shift+Return adds a line. Esc closes.</span>
+              <button class="primary" type="button">Build shot</button>
+            </div>
+          </div>
+        </div>
+        <div class="inspectors">Camera 1: 35mm, height 0.6 m, tilt 12°</div>
+      </div>
+
+      <aside class="panel" id="panel" aria-label="Claude shot prompt">
+        <h2>Build with Claude</h2>
+        <div class="history">
+          <div class="turn">
+            <p class="you">Kitchen, night. Maya and Theo sit across a small table. Low-angle two-shot, she's leaning in.</p>
+            <div class="did">Built:
+              <ul>
+                <li>Maya (adult female), pose “sit lean forward”</li>
+                <li>Theo (adult male), pose “sit”</li>
+                <li>Table, 1 light above it</li>
+                <li>Camera 1 at 0.6 m, 35mm, tilt 12°</li>
+              </ul>
+            </div>
+          </div>
+          <div class="turn working">
+            <p class="you">Same shot, but push in to a close-up on Maya</p>
+            <p class="did">Moving Camera 1 toward Maya…</p>
+          </div>
+        </div>
+        <div class="compose">
+          <label class="hint" for="pa">Describe the shot or the change</label>
+          <textarea id="pa" rows="3" placeholder="e.g. over-the-shoulder from behind Theo"></textarea>
+          <div class="row">
+            <label><input type="checkbox" checked> Keep current scene</label>
+            <button class="primary" type="button">Build shot</button>
+          </div>
+          <div class="row">
+            <button class="plain" type="button">Undo last build</button>
+            <button class="plain" type="button">Next board</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="notes">
+    <h2>What each variant is for</h2>
+    <p>A keeps a running history of prompts next to the frame, so you can build a sequence board by board and see what Claude placed each time. It takes 320px from the camera view.</p>
+    <p>B floats over the camera view and opens from the Prompt button or a shortcut (to be picked so it doesn't clash with the Shot Generator's own keys). The frame stays full size; only the last result shows.</p>
+    <p>Both do the same thing underneath: your text plus the current scene goes to Claude, Claude returns a scene, and the Shot Generator loads it. Save to Board stays the existing button.</p>
+  </section>
+
+<script>
+  const btns = document.querySelectorAll('.switch button');
+  const panel = document.getElementById('panel');
+  const overlay = document.getElementById('overlay');
+  function show(v) {
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
+    panel.hidden = v !== 'a';
+    overlay.hidden = v !== 'b';
+  }
+  btns.forEach(b => b.addEventListener('click', () => show(b.dataset.v)));
+</script>
+</body>
+</html>

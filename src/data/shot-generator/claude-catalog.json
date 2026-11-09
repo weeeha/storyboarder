@@ -1,0 +1,835 @@
+{
+ "objects": [
+  {
+   "id": "bed-full",
+   "name": "Bed: Full",
+   "size": {
+    "width": 1.45,
+    "depth": 2.01,
+    "height": 1,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "bed-king",
+   "name": "Bed: King",
+   "size": {
+    "width": 2.01,
+    "depth": 2.14,
+    "height": 1,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "bed-twin",
+   "name": "Bed: Twin",
+   "size": {
+    "width": 1.12,
+    "depth": 2.01,
+    "height": 1,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "cabinet-bookshelf",
+   "name": "Cabinet: Bookshelf",
+   "size": {
+    "width": 0.8,
+    "depth": 0.28,
+    "height": 2.02,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "cabinet-dresser-3",
+   "name": "Cabinet: Dresser #3",
+   "size": {
+    "width": 0.7,
+    "depth": 0.4,
+    "height": 0.72,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "cabinet-dresser-5",
+   "name": "Cabinet: Dresser #5",
+   "size": {
+    "width": 0.7,
+    "depth": 0.4,
+    "height": 1.12,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "chair-bar",
+   "name": "Chair: Bar",
+   "size": {
+    "width": 0.4,
+    "depth": 0.38,
+    "height": 0.74,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "chair-box",
+   "name": "Chair: Box",
+   "size": {
+    "width": 0.45,
+    "depth": 0.53,
+    "height": 1,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "chair-modern",
+   "name": "Chair: Modern",
+   "size": {
+    "width": 0.92,
+    "depth": 0.7,
+    "height": 0.82,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "chair-office",
+   "name": "Chair: Office",
+   "size": {
+    "width": 0.64,
+    "depth": 0.67,
+    "height": 1.04,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "chair-sofa-wide",
+   "name": "Chair: Sofa, Wide",
+   "size": {
+    "width": 2.47,
+    "depth": 1.18,
+    "height": 0.85,
+    "baseZ": 0.01
+   }
+  },
+  {
+   "id": "chair-sofa",
+   "name": "Chair: Sofa",
+   "size": {
+    "width": 0.9,
+    "depth": 0.87,
+    "height": 0.94,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "chair-stool-mini",
+   "name": "Chair: Stool, Mini",
+   "size": {
+    "width": 0.33,
+    "depth": 0.33,
+    "height": 0.47,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "chair-stool",
+   "name": "Chair: Stool",
+   "size": {
+    "width": 0.33,
+    "depth": 0.33,
+    "height": 0.69,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "door-double-frame",
+   "name": "Door: Double-Frame",
+   "size": {
+    "width": 1.63,
+    "depth": 0.12,
+    "height": 2.05,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "door-double",
+   "name": "Door: Double",
+   "size": {
+    "width": 1.63,
+    "depth": 0.21,
+    "height": 2.05,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "door-single-frame",
+   "name": "Door: Single-Frame",
+   "size": {
+    "width": 1,
+    "depth": 0.12,
+    "height": 2.05,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "door-single",
+   "name": "Door: Single",
+   "size": {
+    "width": 1,
+    "depth": 0.21,
+    "height": 2.05,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "window-1",
+   "name": "Window: 1 Pane",
+   "size": {
+    "width": 1.19,
+    "depth": 0.08,
+    "height": 2.07,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "railing-1",
+   "name": "Railing: 1 Unit",
+   "size": {
+    "width": 3.12,
+    "depth": 0.08,
+    "height": 1.07,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "primitive-cylinder-hollow",
+   "name": "Primitive: Cylinder, Hollow",
+   "size": {
+    "width": 1,
+    "depth": 1,
+    "height": 1,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "primitive-cylinder",
+   "name": "Primitive: Cylinder",
+   "size": {
+    "width": 1,
+    "depth": 1,
+    "height": 1,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "primitive-pyramid",
+   "name": "Primitive: Pyramid",
+   "size": {
+    "width": 1,
+    "depth": 1,
+    "height": 0.69,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "primitive-sphere",
+   "name": "Primitive: Sphere",
+   "size": {
+    "width": 0.98,
+    "depth": 0.98,
+    "height": 0.99,
+    "baseZ": 0.01
+   }
+  },
+  {
+   "id": "primitive-wedge",
+   "name": "Primitive: Wedge",
+   "size": {
+    "width": 1,
+    "depth": 1,
+    "height": 1,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "stairs-single-6",
+   "name": "Stairs: Single, 6",
+   "size": {
+    "width": 1.01,
+    "depth": 1.41,
+    "height": 1.2,
+    "baseZ": -0.01
+   }
+  },
+  {
+   "id": "table-bar-circle",
+   "name": "Table: Bar, Circle",
+   "size": {
+    "width": 0.7,
+    "depth": 0.7,
+    "height": 1.06,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "table-bar-rectangle",
+   "name": "Table: Bar, Rectangle",
+   "size": {
+    "width": 1.28,
+    "depth": 0.7,
+    "height": 1.05,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "table-bar",
+   "name": "Table: Bar",
+   "size": {
+    "width": 0.7,
+    "depth": 0.7,
+    "height": 1.05,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "table-coffee",
+   "name": "Table: Coffee",
+   "size": {
+    "width": 1.1,
+    "depth": 0.6,
+    "height": 0.45,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "table-counter",
+   "name": "Table: Counter",
+   "size": {
+    "width": 1.88,
+    "depth": 0.65,
+    "height": 0.92,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "table-nightstand",
+   "name": "Table: Nightstand",
+   "size": {
+    "width": 0.46,
+    "depth": 0.35,
+    "height": 0.72,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "table-sit-circle",
+   "name": "Table: Sit, Circle",
+   "size": {
+    "width": 1.01,
+    "depth": 1.01,
+    "height": 0.77,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "table-desk",
+   "name": "Table: Desk",
+   "size": {
+    "width": 1.4,
+    "depth": 0.65,
+    "height": 0.75,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "table-sit-rectangle",
+   "name": "Table: Sit, Rectangle",
+   "size": {
+    "width": 2.2,
+    "depth": 1,
+    "height": 0.77,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "table-sit-square",
+   "name": "Table: Sit, Square",
+   "size": {
+    "width": 0.89,
+    "depth": 0.89,
+    "height": 0.77,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "vehicle-bicycle-bmx",
+   "name": "Vehicle: Bicycle BMX",
+   "size": {
+    "width": 0.55,
+    "depth": 1.47,
+    "height": 0.92,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "vehicle-car",
+   "name": "Vehicle: Car",
+   "size": {
+    "width": 2.13,
+    "depth": 5.18,
+    "height": 1.46,
+    "baseZ": 0.01
+   }
+  },
+  {
+   "id": "vehicle-suv",
+   "name": "Vehicle: SUV",
+   "size": {
+    "width": 2.12,
+    "depth": 5.06,
+    "height": 1.89,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "object-lamp",
+   "name": "Object: Lamp",
+   "size": {
+    "width": 0.16,
+    "depth": 0.59,
+    "height": 0.74,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "object-pistol",
+   "name": "Object: Pistol Gun",
+   "size": {
+    "width": 0.03,
+    "depth": 0.24,
+    "height": 0.15,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "rock-1",
+   "name": "Rock: 1",
+   "size": {
+    "width": 0.83,
+    "depth": 1.12,
+    "height": 0.98,
+    "baseZ": -0.01
+   }
+  },
+  {
+   "id": "rock-2",
+   "name": "Rock: 2",
+   "size": {
+    "width": 0.89,
+    "depth": 0.76,
+    "height": 0.72,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "rock-3",
+   "name": "Rock: 3",
+   "size": {
+    "width": 0.83,
+    "depth": 1.11,
+    "height": 0.63,
+    "baseZ": 0.01
+   }
+  },
+  {
+   "id": "tree-bushy",
+   "name": "Tree: Bushy",
+   "size": {
+    "width": 3.92,
+    "depth": 3.57,
+    "height": 4.68,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "tree-no-leaves",
+   "name": "Tree: No Leaves",
+   "size": {
+    "width": 2.52,
+    "depth": 2.25,
+    "height": 3.85,
+    "baseZ": 0
+   }
+  },
+  {
+   "id": "box",
+   "name": "Box (1m cube, scale with width/depth/height)",
+   "size": {
+    "width": 1,
+    "depth": 1,
+    "height": 1,
+    "baseZ": 0
+   }
+  }
+ ],
+ "characters": [
+  {
+   "id": "adult-male",
+   "modelHeight": 1.8
+  },
+  {
+   "id": "adult-female",
+   "modelHeight": 1.63
+  },
+  {
+   "id": "teen-male",
+   "modelHeight": 1.6
+  },
+  {
+   "id": "teen-female",
+   "modelHeight": 1.6
+  },
+  {
+   "id": "child",
+   "modelHeight": 1.11
+  },
+  {
+   "id": "baby",
+   "modelHeight": 0.46
+  }
+ ],
+ "poseNames": [
+  "About to sit",
+  "action 1",
+  "Aim a shotgun",
+  "aim gun",
+  "Aim high",
+  "Air Kiss",
+  "Air Kiss 2",
+  "Anxious arm grab",
+  "Arms reaching out",
+  "AWE",
+  "Basketball defense",
+  "bike ride",
+  "body check",
+  "Breakdancing floor",
+  "Bride Pose hands together",
+  "broad stand shoot",
+  "Can't walk",
+  "Carrying a bag",
+  "Carrying a long object",
+  "carrying box",
+  "cautious",
+  "celebrate1",
+  "celebrate2",
+  "Choked yourself",
+  "Climbing Ladder",
+  "Coker other hand",
+  "Confontation",
+  "convincing",
+  "Cop Walking",
+  "cross arms",
+  "Cross arms looking to the side",
+  "Cross finger",
+  "Cross legged hands out",
+  "Cross legged hands up",
+  "Cross legged sitting explaining",
+  "Cross legged sitting playing guitar",
+  "crouch 1 crossed arms",
+  "Crouch Dog Tug-of-War",
+  "crouch inspect",
+  "Crouch lifting hand out",
+  "Crouch look left",
+  "Crouch look right",
+  "crouch over speak",
+  "Crouch w rifle",
+  "Crouched over getting up",
+  "Crouched over head down",
+  "Crouching down looking at object",
+  "crouching getting up",
+  "Crouching getting up",
+  "Crouching holding an object",
+  "Crouching looking down",
+  "Crouching looking down at object",
+  "Dance wide looking up",
+  "Dancing",
+  "Default Pose",
+  "defend raised arms guarding",
+  "dive",
+  "Driving",
+  "Duck 1",
+  "Duck forward",
+  "explaining",
+  "fall 1",
+  "fall 2",
+  "Fall on Back 2",
+  "Fallen on back holding object",
+  "Falling backwards",
+  "Falling forward",
+  "Falling guarding face",
+  "Falling on back",
+  "Filling a syringe",
+  "fix tie",
+  "Flying backwards",
+  "Force crush",
+  "fours getting up",
+  "freefall",
+  "Get up 1",
+  "Getting in car",
+  "go to your room",
+  "Granny old crouch",
+  "Greeting hand extended",
+  "Guide pointing direction",
+  "Guitar 1",
+  "Guitar 2",
+  "Guitar 3",
+  "Guitar 4",
+  "Guitar 5",
+  "Guitar 6",
+  "Guitar 7",
+  "Guitar 8",
+  "Guitar 9",
+  "Hammer 1",
+  "hammer 2",
+  "Hammer 3",
+  "Hammer 4",
+  "Hammer 5",
+  "Hand on hip",
+  "Hand on neck",
+  "Hand up explaining",
+  "Hands cuffed behind back",
+  "Hands on hips",
+  "Hands up scraming angry",
+  "hesitant 1",
+  "hesitant 2",
+  "hesitant 3",
+  "hi",
+  "Hiding squat",
+  "hit + step",
+  "Hit by bullet",
+  "hit from behind",
+  "Hit from front",
+  "Holding a gun low",
+  "Holding Aiming Gun",
+  "Holding an object",
+  "Holding Knife",
+  "Holding object in hand",
+  "Holding object in left hand",
+  "Holding phone leaning forward",
+  "Holding something",
+  "Hurt on the side crouching",
+  "Injecting into captive",
+  "Jump head first 1",
+  "jump over ledge",
+  "jump run land side",
+  "jump running land",
+  "jump running mid",
+  "jump running start",
+  "Jump Splits",
+  "Jump up",
+  "Jumping catching object",
+  "Jumping into Water Diving",
+  "Kick 1",
+  "Kick 2",
+  "Kick 3",
+  "Kick 4",
+  "Kick 5",
+  "Kicking backwards",
+  "Kicking in door",
+  "kneel",
+  "Kneel action 1",
+  "Kneel stab",
+  "Kneeling guarding face",
+  "kneeling hurt",
+  "Kneeling lifting an object",
+  "Kneeling lifting object",
+  "Kneeling lifting up object",
+  "kneeling looking under bed",
+  "Kneeling looking up",
+  "Kneeling Praying",
+  "Kneeling pushing forward",
+  "Kneeling reaching forward",
+  "laugh",
+  "Lawn Mowing",
+  "lay on side propped up",
+  "Laying down curled up in pain",
+  "Laying down on back",
+  "Laying down on front getting up",
+  "Laying down on front getting up 2",
+  "Laying down on side",
+  "Laying down on side 2",
+  "laying hurt",
+  "laying on back",
+  "Laying on back kicking up ",
+  "Laying on back knees up",
+  "laying on front",
+  "Laying Watch",
+  "lean against wall",
+  "Lean against wall with leg up",
+  "Lean forward hands up",
+  "lean forward on table",
+  "Lean forward Stop",
+  "Leaning against wall 2",
+  "Leaning over to lightly touch",
+  "Lifting harge object",
+  "Lifting up an object",
+  "Light Skip",
+  "Live long and Prosper",
+  "Look up hand down",
+  "Looking around",
+  "Looking at an object",
+  "Looking at ID",
+  "Looking back",
+  "Looking back and up",
+  "Looking down holding an object",
+  "looking down with arms out",
+  "Looking out into distance",
+  "Looking Through 1",
+  "Looking Through 2",
+  "Male Dance 1",
+  "Marion start",
+  "martial 1",
+  "Middle Finger",
+  "open door",
+  "Open refridgerator",
+  "petrified hit backwards",
+  "Pleading",
+  "point",
+  "point 2",
+  "Point sideways",
+  "Pointing",
+  "Pointing to the side with attitude",
+  "Praying 1",
+  "Praying 2",
+  "Praying standing",
+  "Pre Kick 1",
+  "Punch 1",
+  "Punch poor form",
+  "push back explosion",
+  "Pushed back by wind",
+  "pushed back by wind 2",
+  "Pushed back horizontal",
+  "Raptor hands",
+  "Reach up",
+  "Reaching for a can",
+  "Reaching into pocket",
+  "Reaching up to someone's face",
+  "Reading a Magazine",
+  "riding a bike",
+  "riding bike wheelie",
+  "Riding Military seat",
+  "roll over 1",
+  "Roll over get up",
+  "run",
+  "Run",
+  "run 3",
+  "Run leaning forward",
+  "Run looking left",
+  "Run shift right",
+  "Run slow down",
+  "Running",
+  "running 3",
+  "Running looking to the side",
+  "Running shift left",
+  "Running Sprint",
+  "Running With Rifle",
+  "Shake hands Left",
+  "Shake hands Right",
+  "Shook",
+  "shrug",
+  "Shrugged",
+  "Shrugged arm out",
+  "Singing with arm up",
+  "Sit against wall",
+  "Sit and on the phone",
+  "Sit and point",
+  "sit chair",
+  "sit chair lean forward on table",
+  "sit cross legged",
+  "Sit cross legged",
+  "sit hug knees",
+  "Sit in a car",
+  "sit on floor",
+  "Sit on stool",
+  "Sitting ",
+  "Sitting and reading a book",
+  "Sitting Dancing",
+  "Sitting drinking",
+  "Sitting driving a car",
+  "Sitting in car carrying large object",
+  "Sitting in car driving",
+  "Sitting in car guarding face",
+  "Sitting in car worried",
+  "Sitting in chair cross legged",
+  "Sitting in chair, passed out",
+  "sitting in phone car",
+  "Sitting lean",
+  "Sitting legs forward",
+  "Sitting looking around",
+  "Sitting looking up",
+  "Sitting on a couch aiming remote",
+  "Sitting relaxed",
+  "Sitting relaxed on couch",
+  "Sitting smoking a cigarette",
+  "Sitting tied",
+  "Sitting up in chair, tied up",
+  "Sitting with head down",
+  "skateboarding leaning back",
+  "Slice 1",
+  "slouch over",
+  "Sneek shotgun",
+  "Sneek with rifle",
+  "Spreading arrms",
+  "Squat reaching",
+  "squatting",
+  "stand",
+  "stand 2",
+  "stand 3",
+  "Standing at table",
+  "Standing Attitude",
+  "Standing Attitude 2",
+  "Standing conversation hands",
+  "standing Hands on hips",
+  "Standing holding phone",
+  "Standing holding phone look",
+  "Standing holding phone tap",
+  "Standing looking up",
+  "Standing one hand pressing down",
+  "Standing with arms back",
+  "Standing working tall table",
+  "Step 1",
+  "Step2",
+  "Stepping aiming gun right",
+  "Swimming (Butterfly)",
+  "Swinging",
+  "Taking off a mask 1",
+  "Taking off a mask 2",
+  "Taking off a mask 3",
+  "Throwing Can",
+  "Tied to a chair",
+  "turning around",
+  "Typing while standing",
+  "Untying rope",
+  "Victim on floor 1",
+  "walk",
+  "Walk",
+  "Walk 2",
+  "Walk 3",
+  "Walk 4",
+  "Walk holding up weapon",
+  "Walk hurt",
+  "walking",
+  "Walking",
+  "Walking 2",
+  "Walking dragging chair",
+  "walking hands in pockets",
+  "Walking looking up marvel awe amazement wonder",
+  "Walking past",
+  "Walking talking on the phone",
+  "Walking while aiming Gun",
+  "Walking with a gun",
+  "Washing face",
+  "wide stance",
+  "working on desk",
+  "wrenched"
+ ]
+}
