@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import ModelObject from './components/Three/ModelObject'
 import Environment from './components/Three/Environment'
 import React, { useRef, useEffect, useMemo, useCallback, useState, useContext } from 'react'
+import { setLiveScene } from './claude/live-scene'
 import Ground from './components/Three/Ground'
 import useTextureLoader from './hooks/use-texture-loader'
 import TWEEN from '@tweenjs/tween.js'
@@ -124,6 +125,7 @@ const SceneManagerR3fLarge = connect(
     mainViewCamera
 }) => {
     const { scene, camera, gl, size } = useThree()
+    useEffect(() => { setLiveScene(scene) }, [scene])
     const rootRef = useRef()
     const groundRef = useRef()
     const ambientLightRef = useRef()
